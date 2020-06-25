@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">Rick and Morty</string>
 
-    <string name="com.twitter.sdk.android.CONSUMER_KEY">1RWRcnq4k2kpdu1l8jj6a0aSf</string>
-    <string name="com.twitter.sdk.android.CONSUMER_SECRET">RCm08bLgchh2W3ZM5SokB28PBBuSBOrhOHYFaI73BFp9TGVlQn</string>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
