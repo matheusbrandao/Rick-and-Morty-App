@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Rick and Morty</string>
+
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">1RWRcnq4k2kpdu1l8jj6a0aSf</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">RCm08bLgchh2W3ZM5SokB28PBBuSBOrhOHYFaI73BFp9TGVlQn</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="label_title_character">Character</string>
+    <string name="label_title_location">Location</string>
+    <string name="label_title_episode">Episode</string>
+    <string name="label_episode">S01E01</string>
+    <string name="label_episode_name">Lorem ipsum dolor sit...</string>
+    <string name="label_episode_air_date">Overline</string>
+    <string name="label_location_type">Planet</string>
+    <string name="label_location_name">Earth</string>
+    <string name="label_character_status">Alive</string>
+    <string name="label_character_name">Rick</string>
+
+    <string name="title_menu_home">Home</string>
+    <string name="title_menu_location">Location</string>
+    <string name="title_menu_episode">Episode</string>
+</resources>
