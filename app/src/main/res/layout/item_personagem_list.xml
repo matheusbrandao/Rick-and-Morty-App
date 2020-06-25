@@ -46,7 +46,7 @@
                     style="@style/Subtitle_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{character.nome}"
+                    android:text="@{character.name}"
                     app:layout_constraintTop_toBottomOf="@+id/txt_character_status"
                     tools:text="@string/label_character_name" />
             </androidx.constraintlayout.widget.ConstraintLayout>

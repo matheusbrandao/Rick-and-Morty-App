@@ -23,4 +23,21 @@ object BindingAdapter {
                 .into(view)
         }
     }
+
+    @JvmStatic
+    @BindingAdapter("characterDetailImage")
+    fun loadCharacterDetailImage(view: AppCompatImageView, userImage: String?) {
+        userImage?.let {
+            val options = RequestOptions()
+                .centerCrop()
+                .circleCrop()
+                .skipMemoryCache(false)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+
+            Glide.with(view.context)
+                .load(userImage)
+                .apply(options)
+                .into(view)
+        }
+    }
 }
