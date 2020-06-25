@@ -16,9 +16,12 @@ class CharacterListViewModel(
     val items: LiveData<List<CharacterBinding>>
         get() = _items
 
-    fun getCharacters() {
+    fun getCharacters(currentPage: Int) {
+        _dataLoading.value = true
+
         findCharactersUseCase.execute(
-            null,
+            FindCharactersUseCase.Params(
+                page = currentPage),
             {
                 val listCharacters = it.map { character ->
                     CharacterDataMapper.fromDomain(
@@ -26,12 +29,17 @@ class CharacterListViewModel(
                     )
                 }
 
-                _items.postValue(
-                    listCharacters
-                )
+                _items.apply {
+                    val newList = this.value!!.toMutableList()
+                    newList.addAll(listCharacters)
+                    value = newList
+                }
+
+                _dataLoading.value = false
             },
             {
                 Timber.e("Error: ${it.message.toString()}")
+                _dataLoading.value = false
             }
         )
     }

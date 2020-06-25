@@ -9,7 +9,8 @@ object CharacterMapper : Mapper<CharacterEntity, Character> {
         return Character(
             status = remote.status,
             name = remote.name,
-            image = remote.image
+            image = remote.image,
+            species = remote.species
         )
     }
 

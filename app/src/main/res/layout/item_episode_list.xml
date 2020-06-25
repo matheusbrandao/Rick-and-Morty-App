@@ -20,37 +20,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingRight="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_character_status"
-                style="@style/Episode"
-                android:layout_width="match_parent"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@{episode.episode}"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/label_episode" />
+                android:paddingRight="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/ic_chevron_right"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_episode_name"
-                style="@style/SecondaryText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{episode.nome}"
-                app:layout_constraintRight_toLeftOf="@+id/ic_chevron_right"
-                app:layout_constraintTop_toBottomOf="@+id/txt_character_status"
-                tools:text="@string/label_episode_name" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_character_status"
+                    style="@style/Episode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@{episode.episode}"
+                    app:layout_constraintTop_toTopOf="parent"
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_episode_airDate"
-                style="@style/Overline"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="@{episode.airDate}"
-                app:layout_constraintTop_toBottomOf="@+id/txt_episode_name"
-                tools:text="@string/label_episode_air_date" />
+                    tools:text="@string/label_episode" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_episode_name"
+                    style="@style/SecondaryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{episode.nome}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_character_status"
+                    tools:text="@string/label_episode_name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_episode_airDate"
+                    style="@style/Overline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@{episode.airDate}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_episode_name"
+                    tools:text="@string/label_episode_air_date" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/ic_chevron_right"

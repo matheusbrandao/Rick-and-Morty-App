@@ -5,8 +5,12 @@ import android.view.ViewGroup
 import com.matheusbrandao.rickandmorty.databinding.ItemPersonagemListBinding
 import com.matheusbrandao.rickandmorty.presentation.character.CharacterBinding
 import com.matheusbrandao.rickandmorty.ui.holder.CharacterViewHolder
+import com.matheusbrandao.rickandmorty.ui.utils.OnItemClickListener
 
-class CharacterListAdapter(items: List<CharacterBinding>) :
+class CharacterListAdapter(
+    items: List<CharacterBinding>,
+    private val onCharacterClickListener: OnItemClickListener<CharacterBinding>
+) :
     BaseListAdapter<CharacterBinding, CharacterViewHolder>(items) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
@@ -20,5 +24,9 @@ class CharacterListAdapter(items: List<CharacterBinding>) :
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
         val character = getItemByPosition(position)
         holder.bind(character)
+
+        holder.itemView.setOnClickListener {
+            onCharacterClickListener.onItemClick(character)
+        }
     }
 }
