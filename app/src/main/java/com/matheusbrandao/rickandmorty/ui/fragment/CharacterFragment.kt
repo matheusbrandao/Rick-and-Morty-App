@@ -50,6 +50,10 @@ class CharacterFragment : Fragment() {
         setupListAdapter()
         viewModel.getCharacters(currentPage)
 
+        setupActionBar()
+    }
+
+    private fun setupActionBar() {
         activity!!.setTitle(R.string.label_title_character)
     }
 

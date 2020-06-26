@@ -43,16 +43,22 @@ class CharacterDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewDataBinding.lifecycleOwner = this.viewLifecycleOwner
 
-        bottomNavViewMain = view.rootView.bottomNavView_main
-        bottomNavViewMain.visibility = View.GONE
-        activity!!.title = characterData?.name
-//        activity!!.actionBar!!.setDisplayHomeAsUpEnabled(true)
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setupBottomNav(view)
+        setupActionBar()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         bottomNavViewMain.visibility = View.VISIBLE
+    }
+
+    private fun setupActionBar() {
+        activity!!.title = characterData?.name
+    }
+
+    private fun setupBottomNav(view: View) {
+        bottomNavViewMain = view.rootView.bottomNavView_main
+        bottomNavViewMain.visibility = View.GONE
     }
 
 }
