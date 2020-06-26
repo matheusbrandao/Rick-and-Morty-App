@@ -24,9 +24,11 @@ class ApiRemoteDataSourceImpl(private val characterService: ApiService) :
             }
     }
 
-    override fun findCharacters(page: Int, pageSize: Int): Observable<CharacterData> {
+    override fun findCharacters(page: Int): Observable<List<Character>> {
         return characterService.findCharacters(page).map {
-            CharacterDataMapper.fromRemote(it)
+            it.results.map(
+                CharacterMapper::fromRemote
+            )
         }
     }
 

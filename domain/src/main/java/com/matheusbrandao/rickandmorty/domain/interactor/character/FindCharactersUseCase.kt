@@ -12,8 +12,9 @@ class FindCharactersUseCase(
 ) : ObservableUseCase<List<Character>, FindCharactersUseCase.Params>(postExecutionThread) {
 
     override fun buildUseCaseObservable(params: Params?): Observable<List<Character>> {
-        return characterRepository.findCharacters()
+        checkNotNull(params)
+        return characterRepository.findCharacters(params.page)
     }
 
-    data class Params(val page: Int, val pageSize: Int)
+    data class Params(val page: Int)
 }

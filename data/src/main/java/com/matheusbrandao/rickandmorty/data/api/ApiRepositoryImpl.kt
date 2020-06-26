@@ -15,8 +15,8 @@ class ApiRepositoryImpl(
         return characterRemoteDataSource.findCharacters()
     }
 
-    override fun findCharacters(page: Int, pageSize: Int): Observable<CharacterData> {
-        return characterRemoteDataSource.findCharacters(page, pageSize)
+    override fun findCharacters(page: Int): Observable<List<Character>> {
+        return characterRemoteDataSource.findCharacters(page)
     }
 
     override fun findLocations(): Observable<List<Location>> {

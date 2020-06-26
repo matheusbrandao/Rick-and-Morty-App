@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId 'com.matheusbrandao.rickandmorty'
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -73,4 +73,6 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
 
     implementation "com.jakewharton.timber:timber:${timberVersion}"
+
+    implementation 'com.github.danish-p:PaginationApp:0.1.0'
 }

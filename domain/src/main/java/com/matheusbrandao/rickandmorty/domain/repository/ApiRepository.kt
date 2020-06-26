@@ -9,7 +9,7 @@ import io.reactivex.Observable
 interface ApiRepository {
 
     fun findCharacters(): Observable<List<Character>>
-    fun findCharacters(page: Int, pageSize: Int): Observable<CharacterData>
+    fun findCharacters(page: Int): Observable<List<Character>>
     fun findLocations(): Observable<List<Location>>
     fun findEpisodes(): Observable<List<Episode>>
 }

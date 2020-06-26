@@ -9,8 +9,9 @@ object CharacterDataMapper :
     override fun fromDomain(domain: Character): CharacterBinding {
         return CharacterBinding(
             status = domain.status,
-            nome = domain.name,
-            image = domain.image
+            name = domain.name,
+            image = domain.image,
+            species = domain.species
         )
     }
 }

@@ -34,6 +34,10 @@ class EpisodeFragment : Fragment() {
         setupListAdapter()
         viewModel.getEpisodes()
 
+        setupActionBar()
+    }
+
+    private fun setupActionBar() {
         activity!!.setTitle(R.string.label_title_episode)
     }
 
