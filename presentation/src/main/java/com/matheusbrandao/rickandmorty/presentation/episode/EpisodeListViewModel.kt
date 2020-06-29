@@ -17,6 +17,8 @@ class EpisodeListViewModel(
         get() = _items
 
     fun getEpisodes() {
+        _dataLoading.value = true
+
         findEpisodesUseCase.execute(
             null,
             {
@@ -29,9 +31,12 @@ class EpisodeListViewModel(
                 _items.postValue(
                     listEpisodes
                 )
+                _dataLoading.value = false
             },
             {
                 Timber.e("Error: ${it.message.toString()}")
+                parseErrors(it)
+                _dataLoading.value = false
             }
         )
     }

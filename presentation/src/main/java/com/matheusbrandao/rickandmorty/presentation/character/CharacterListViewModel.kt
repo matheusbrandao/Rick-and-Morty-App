@@ -39,6 +39,7 @@ class CharacterListViewModel(
             },
             {
                 Timber.e("Error: ${it.message.toString()}")
+                parseErrors(it)
                 _dataLoading.value = false
             }
         )

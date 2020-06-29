@@ -1,8 +1,8 @@
 package com.matheusbrandao.rickandmorty.data_remote
 
+import com.matheusbrandao.rickandmorty.data_remote.exception.UnknownException
 import io.reactivex.Completable
 import io.reactivex.Observable
-import org.omg.CORBA.portable.UnknownException
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.Retrofit
@@ -32,7 +32,6 @@ class RxCallAdapter<T>(
     }
 
     private fun asException(throwable: Throwable): Exception {
-        //Tratar aqui exceptions
         return UnknownException(throwable)
     }
 }

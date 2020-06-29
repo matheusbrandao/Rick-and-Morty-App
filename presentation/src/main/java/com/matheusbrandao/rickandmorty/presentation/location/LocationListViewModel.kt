@@ -17,6 +17,8 @@ class LocationListViewModel(
         get() = _items
 
     fun getLocations() {
+        _dataLoading.value = true
+
         findLocationsUseCase.execute(
             null,
             {
@@ -29,9 +31,12 @@ class LocationListViewModel(
                 _items.postValue(
                     listLocations
                 )
+                _dataLoading.value = false
             },
             {
                 Timber.e("Error: ${it.message.toString()}")
+                parseErrors(it)
+                _dataLoading.value = false
             }
         )
     }
